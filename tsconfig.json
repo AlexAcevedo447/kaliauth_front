@@ -21,7 +21,14 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "@kaliauthdomain/*": ["src/app/kaliauth/domain/*"],
+      "@kaliauthapp/*": ["src/app/kaliauth/application/*"],
+      "@kaliauthinfra/*": ["src/app/kaliauth/infrastructure/*"],
+      "@kaliauthui/*": ["src/app/kaliauth/presentation-ui/*"]
+    },
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
