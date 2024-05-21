@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { KaliauthModule } from './kaliauth/kaliauth.module';
-import { ButtonModule } from 'primeng/button';
+import { KalicoreModule } from './kalicore/kalicore.module';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, KaliauthModule],
+  imports: [CommonModule, RouterOutlet, KaliauthModule, KalicoreModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
-export class AppComponent {
-}
+export class AppComponent {}
