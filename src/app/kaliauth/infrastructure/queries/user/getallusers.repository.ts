@@ -6,21 +6,27 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import IServerResponse from '@kaliauthdomain/contracts/server.response';
+import { lastValueFrom } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export class GetAllUsersRepository implements IQuery<IDomainResponse<User[]>> {
+export class GetAllUsersRepository
+  implements IQuery<undefined, IDomainResponse<User[]>>
+{
   private response: IServerResponse<User[]> = {};
 
   constructor(private http: HttpClient) {}
 
   private async prepare() {
-    this.http
-      .get<IServerResponse<User[]>>(environment.apiUrl)
-      .subscribe((response) => (this.response = response));
+    const observable = this.http.get<IServerResponse<User[]>>(
+      `${environment.apiUrl}/users`,
+    );
+
+    this.response = await lastValueFrom(observable);
   }
 
   async execute(): Promise<IDomainResponse<User[]>> {
-    this.prepare();
+    await this.prepare();
+    console.log(this.response);
     return new InfraGetAllUsersResponse(this.response);
   }
 }

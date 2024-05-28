@@ -1,3 +1,3 @@
-export default interface IQuery<T> {
-  execute(): Promise<T>;
+export default interface IQuery<Received, Returned> {
+  execute(data?: Received): Promise<Returned>;
 }

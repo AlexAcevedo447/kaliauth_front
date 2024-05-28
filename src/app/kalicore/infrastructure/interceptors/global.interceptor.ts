@@ -4,32 +4,32 @@ import {
   HttpHandlerFn,
   HttpInterceptorFn,
   HttpRequest,
-  HttpResponse,
 } from '@angular/common/http';
 import { inject } from '@angular/core';
-import { MessageService } from 'primeng/api';
+import IServerResponse from '@kaliauthdomain/contracts/server.response';
+import { InfraNotificationCommand } from '@kaliauthinfra/commands/notification/notification.command';
 import { Observable, tap, catchError, throwError } from 'rxjs';
 
 export const globalInterceptor: HttpInterceptorFn = (
   req: HttpRequest<any>,
   next: HttpHandlerFn,
-): Observable<HttpEvent<any>> => {
-  const messageService: MessageService = inject(MessageService);
+): Observable<HttpEvent<IServerResponse<any>>> => {
+  const notificationCommand: InfraNotificationCommand = inject(
+    InfraNotificationCommand,
+  );
 
   return next(req).pipe(
-    tap((event) => {
+    tap((event: HttpEvent<any>) => {
       if (event.type === HttpEventType.Response) {
-        messageService.add({
+        notificationCommand.execute({
           severity: 'success',
-          summary: 'Success',
-          detail: JSON.stringify(<HttpResponse<any>>event.body),
+          detail: event.body.message,
         });
       }
     }),
     catchError((error, caught) => {
-      messageService.add({
+      notificationCommand.execute({
         severity: 'error',
-        summary: 'Error',
         detail: error.error.message,
       });
 

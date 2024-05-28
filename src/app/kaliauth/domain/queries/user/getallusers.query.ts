@@ -6,11 +6,13 @@ import { Inject, Injectable } from '@angular/core';
 import { GetAllUsersRepository } from '@kaliauthinfra/queries/user/getallusers.repository';
 
 @Injectable({ providedIn: 'root' })
-export class GetAllUsersQuery implements IQuery<IDomainResponse<User[]>> {
+export class GetAllUsersQuery
+  implements IQuery<undefined, IDomainResponse<User[]>>
+{
   private response!: IDomainResponse<User[]>;
   constructor(
     @Inject(GetAllUsersRepository)
-    private readonly getUsersRepo: IQuery<IDomainResponse<User[]>>,
+    private readonly getUsersRepo: IQuery<undefined, IDomainResponse<User[]>>,
   ) {}
 
   private async prepare(): Promise<void> {
