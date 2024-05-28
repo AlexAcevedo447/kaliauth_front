@@ -5,5 +5,6 @@ import { PresentationUiModule } from '@kaliauthui/presentation-ui.module';
 @NgModule({
   declarations: [],
   imports: [CommonModule, PresentationUiModule],
+  exports: [],
 })
 export class KaliauthModule {}

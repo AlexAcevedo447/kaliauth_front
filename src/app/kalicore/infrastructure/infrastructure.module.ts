@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MessageService } from 'primeng/api';
-import { ToastModule } from 'primeng/toast';
 
 @NgModule({
-  providers: [MessageService],
+  providers: [],
   declarations: [],
-  imports: [CommonModule, ToastModule],
+  imports: [CommonModule],
   exports: [],
 })
 export class InfrastructureModule {}

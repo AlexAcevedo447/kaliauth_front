@@ -7,13 +7,15 @@ import { GetAllUsersQuery } from '@kaliauthdomain/queries/user/getallusers.query
 import IServerResponse from '@kaliauthdomain/contracts/server.response';
 
 @Injectable({ providedIn: 'root' })
-export class AppGetAllUsersQuery implements IQuery<IDomainResponse<User[]>> {
+export class AppGetAllUsersQuery
+  implements IQuery<undefined, IDomainResponse<User[]>>
+{
   private domainResponse!: IDomainResponse<User[]>;
   private appResponse!: IServerResponse<User[]>;
 
   constructor(
     @Inject(GetAllUsersQuery)
-    private readonly getUsersQuery: IQuery<IDomainResponse<User[]>>,
+    private readonly getUsersQuery: IQuery<undefined, IDomainResponse<User[]>>,
   ) {}
 
   private async prepare(): Promise<void> {
