@@ -1,0 +1,14 @@
+<p-floatLabel>
+  <input
+    pInputText
+    #inputElement
+    id="{{ id }}"
+    type="{{ type }}"
+    (input)="onInput($event)"
+    (blur)="onTouch()"
+    (change)="onInput($event)"
+    [disabled]="disabled"
+    class="bg-primary-reverse"
+  />
+  <label for="{{ for }}">{{ label }}</label>
+</p-floatLabel>

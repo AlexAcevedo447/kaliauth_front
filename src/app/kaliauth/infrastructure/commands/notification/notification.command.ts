@@ -21,14 +21,7 @@ export class InfraNotificationCommand
   }
 
   private async resolve(severity: Severity, title?: string, message?: string) {
-    switch (severity) {
-      case 'success':
-        this.message(severity, title, message);
-        break;
-      case 'error':
-        this.message(severity, title, message);
-        break;
-    }
+    this.message(severity, title, message);
   }
 
   async execute(

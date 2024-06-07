@@ -1,0 +1,19 @@
+<form class="form" [formGroup]="loginForm" (submit)="onSubmit()">
+  <app-input-text
+    [id]="'username'"
+    [for]="'username'"
+    [label]="'Username'"
+    [type]="'email'"
+    [control]="loginForm.get('username')"
+  />
+
+  <app-input-text
+    [id]="'password'"
+    [for]="'password'"
+    [label]="'Password'"
+    [type]="'password'"
+    [control]="loginForm.get('password')"
+  />
+
+  <app-basic-button label="Login" level="warning" />
+</form>
