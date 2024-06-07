@@ -27,7 +27,9 @@
       "@kaliauthdomain/*": ["src/app/kaliauth/domain/*"],
       "@kaliauthapp/*": ["src/app/kaliauth/application/*"],
       "@kaliauthinfra/*": ["src/app/kaliauth/infrastructure/*"],
-      "@kaliauthui/*": ["src/app/kaliauth/presentation-ui/*"]
+      "@kaliauthui/*": ["src/app/kaliauth/presentation-ui/*"],
+      "@buttoncomponents/*": ["src/app/components/buttons/*"],
+      "@inputcomponents/*": ["src/app/components/inputs/*"]
     },
   },
   "angularCompilerOptions": {
