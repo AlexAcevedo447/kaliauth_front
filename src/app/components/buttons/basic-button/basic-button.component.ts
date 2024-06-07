@@ -13,4 +13,5 @@ export class BasicButtonComponent {
   @Input() label: string = 'Default';
   @Input() type: string = 'submit';
   @Input() level: string = 'success';
+  @Input() disabled: boolean = false;
 }

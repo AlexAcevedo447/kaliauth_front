@@ -15,5 +15,9 @@
     [control]="loginForm.get('password')"
   />
 
-  <app-basic-button label="Login" level="warning" />
+  <app-basic-button
+    label="Login"
+    level="warning"
+    [disabled]="!loginForm.valid"
+  />
 </form>

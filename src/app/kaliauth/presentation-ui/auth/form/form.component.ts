@@ -38,7 +38,7 @@ export class FormComponent implements OnInit {
         Validators.required,
         Validators.email,
       ]),
-      password: new FormControl<string>(''),
+      password: new FormControl<string>('', [Validators.required]),
     });
   }
 
