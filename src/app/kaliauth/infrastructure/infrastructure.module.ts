@@ -5,7 +5,7 @@ import {
   withFetch,
   withInterceptors,
 } from '@angular/common/http';
-import { globalInterceptor } from 'src/app/kalicore/infrastructure/interceptors/global.interceptor';
+import { globalInterceptor } from '@kalicoreinfra/interceptors/global.interceptor';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 

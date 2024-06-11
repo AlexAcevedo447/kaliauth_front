@@ -9,7 +9,7 @@ import ILoginResult from '@kaliauthdomain/contracts/loginresult.interface';
 import {
   CookieConfig,
   StoreCacheKeyCommand,
-} from 'src/app/kalicore/infrastructure/commands/storecachekey.command';
+} from '@kalicoreinfra/commands/storecachekey.command';
 
 @Injectable({ providedIn: 'root' })
 export class AppLoginCommand
