@@ -4,10 +4,12 @@ import { KaliauthModule } from './kaliauth/kaliauth.module';
 import { KalicoreModule } from './kalicore/kalicore.module';
 import { CommonModule } from '@angular/common';
 import { ToastModule } from 'primeng/toast';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
+  providers: [CookieService],
   imports: [
     CommonModule,
     RouterOutlet,

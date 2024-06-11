@@ -28,6 +28,7 @@
       "@kaliauthapp/*": ["src/app/kaliauth/application/*"],
       "@kaliauthinfra/*": ["src/app/kaliauth/infrastructure/*"],
       "@kaliauthui/*": ["src/app/kaliauth/presentation-ui/*"],
+      "@kalicoreinfra/*": ["src/app/kalicore/infrastructure/*"],
       "@buttoncomponents/*": ["src/app/components/buttons/*"],
       "@inputcomponents/*": ["src/app/components/inputs/*"]
     },
